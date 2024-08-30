@@ -1,0 +1,7 @@
+{
+    "name": "Spicetify-Rewind",
+    "description": "Spicetify extension which lets you run a song back like at a boiler room set.",
+    "preview": "screenshot.png",
+    "main": "index.js",
+    "readme": "README.md"
+}
