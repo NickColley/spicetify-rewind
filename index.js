@@ -9,8 +9,8 @@
 	}
 
     const NAMESPACE = "spicetify-rewind-plugin";
-    // From https://www.myinstants.com/en/instant/dj-rewind-50550/
-    const REWIND_AUDIO_URL = "https://www.myinstants.com/media/sounds/produce-online-audio-converter.mp3";
+    // From https://samplefocus.com/samples/vinyl-rewind
+    const REWIND_AUDIO_URL = "https://cdn.jsdelivr.net/gh/NickColley/spicetify-rewind/rewind.mp3";
     const REWIND_AUDIO_START_TIME = 0.612; // in seconds
     const REWIND_AUDIO_END_TIME = 2.8; // in seconds
     
