@@ -8,7 +8,7 @@
 		return;
 	}
 
-    const NAMESPACE = "spicetify-rewind-plugin";
+	const NAMESPACE = "spicetify-rewind-plugin";
     // From https://samplefocus.com/samples/vinyl-rewind
     const REWIND_AUDIO_URL = "https://cdn.jsdelivr.net/gh/NickColley/spicetify-rewind/rewind.mp3";
     const REWIND_AUDIO_START_TIME = 0.612; // in seconds
