@@ -1,7 +1,7 @@
 {
     "name": "Reeeewiiiind",
     "description": "Reeeeeewiiiind like you're at a boiler room set.",
-    "preview": "screenshot.png",
+    "preview": "preview.gif",
     "main": "index.js",
     "readme": "README.md",
     "tags": ["rewind", "fun"]
