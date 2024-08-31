@@ -14,6 +14,14 @@
 	const REWIND_AUDIO_START_TIME = 0.612; // in seconds
 	const REWIND_AUDIO_END_TIME = 2.8; // in seconds
 
+	function clamp(num, min, max) {
+		return num <= min
+			? min
+			: num >= max
+				? max
+				: num
+	}
+
 	function addStylesToPage(styles) {
 		const $style = document.createElement("style");
 		$style.textContent = styles;
@@ -84,6 +92,11 @@
 			stopAudio(audioClip);
 			clearTimeout(audioTimer);
 		}
+		const currentVolume = Spicetify.Player.getVolume();
+		// Scale the audio clip volume with the music but keep it a little bit lower as well.
+		// Spotify's volume seems to not be linear so curve the volume based on it's value...
+		const clampedVolume = clamp(currentVolume, 0, 0.8);
+		audioClip.volume = Math.pow(clampedVolume, 3).toFixed(2);
 		audioClip.play();
 		Spicetify.Player.pause();
 		Spicetify.Player.seek(0);
@@ -114,6 +127,5 @@
 	});
 
 	$button.append($iconWrapper);
-	console.log($rewindButton);
 	$rewindButton.before($button);
 })();
