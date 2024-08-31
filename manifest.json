@@ -1,7 +1,8 @@
 {
-    "name": "Spicetify-Rewind",
-    "description": " Reeeeeewiiiind like you're at a boiler room set.",
+    "name": "Reeeewiiiind",
+    "description": "Reeeeeewiiiind like you're at a boiler room set.",
     "preview": "screenshot.png",
     "main": "index.js",
-    "readme": "README.md"
+    "readme": "README.md",
+    "tags": ["rewind", "fun"]
 }
