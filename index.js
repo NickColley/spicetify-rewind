@@ -86,6 +86,7 @@
 	$button.setAttribute("aria-label", "Rewind");
 	$button.classList = $rewindButton.classList;
 	let audioTimer = null;
+	let isPlaying = null;
 	$button.addEventListener("click", () => {
 		// Allow spamming of the button by resetting the audio clip.
 		if (audioTimer) {
@@ -98,7 +99,9 @@
 		const clampedVolume = clamp(currentVolume, 0, 0.8);
 		audioClip.volume = Math.pow(clampedVolume, 3).toFixed(2);
 		audioClip.play();
-		Spicetify.Player.pause();
+		if (isPlaying) {
+			Spicetify.Player.pause();
+		}
 		Spicetify.Player.seek(0);
 		$icon.classList.add(`${NAMESPACE}--rewind`);
 		audioTimer = window.setTimeout(() => {
@@ -119,7 +122,7 @@
 	const $icon = $iconWrapper.querySelector("svg");
 
 	Spicetify.Player.addEventListener("onplaypause", () => {
-		const isPlaying = Spicetify.Player.isPlaying();
+		isPlaying = Spicetify.Player.isPlaying();
 		$icon.classList.toggle(`${NAMESPACE}--playing`, isPlaying);
 		if (isPlaying && !audioClip.paused) {
 			stopAudio(audioClip);
