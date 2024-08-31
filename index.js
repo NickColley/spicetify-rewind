@@ -130,5 +130,6 @@
 	});
 
 	$button.append($iconWrapper);
-	$rewindButton.before($button);
+	const $playerControls = document.querySelector(".player-controls__left");
+	$playerControls.prepend($button);
 })();
